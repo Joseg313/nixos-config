@@ -1,0 +1,8 @@
+# secrets
+secrets.nix
+*.key
+*.pem
+
+# nix build junk
+result
+result-*
