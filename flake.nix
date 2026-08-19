@@ -8,7 +8,10 @@
 	outputs = { nixpkgs, ... }: {	
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
-			modules = [ ./configuration.nix ];
+			modules = [
+				./configuration.nix
+				./modules/docker.nix
+		        ];
 		};	
 	};
 
