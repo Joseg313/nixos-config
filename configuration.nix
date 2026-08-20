@@ -105,6 +105,7 @@
 	wget
 	freshfetch
 	kitty
+	dig
   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
@@ -123,7 +124,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
@@ -135,5 +136,12 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
+  
 
+  systemd.sleep.settings.Sleep =  {
+	AllowSuspend = "no";
+	AllowHibernation = "no"; 
+  };
+	
+  
 }
