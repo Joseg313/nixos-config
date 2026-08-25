@@ -11,6 +11,7 @@
 			modules = [
 				./configuration.nix
 				./modules/docker.nix
+				./modules/tailscale.nix
 		        ];
 		};	
 	};
